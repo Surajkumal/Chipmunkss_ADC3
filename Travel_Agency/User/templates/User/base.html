@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    {% load static %}
+     <link rel='stylesheet' href="{% static 'main.css' %}">
+
+      <!-- Scripts -->
+      {% load static %}
+      <script src="{% static 'jquery.min.js' %}"></script>
+      <script src="{% static 'browser.min.js' %}"></script>
+      <script src="{% static 'breakpoints.min.js' %}"></script>
+      <script src="{% static 'main.js' %}"></script>
+
+     <link type="text/css" rel="stylesheet" href="bootstrap.min.css"/>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+  </head>
+
+
+    <title>Travel Agency</title>
+  </head>
+  {% include "User/navbar.html"%}
+  <div class="container">
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+  {%  block content %}  {% endblock %}
+  </div>
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+   
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <div class="content">
+            <section>
+              <h3>Emergency contact Numbers of Nepal </h3>
+              <p><br>
+              Police Control-100<br><br>
+              Police Emergency Number-4228435<br><br>
+              Metropolitan Police Range (Kathmandu)-4261945/4261790<br><br>
+              Metropolitan Police Range (Lalitpur)-5521207<br><br>
+              Metropolitan Police Range (Bhaktapur)-6614821<br><br>
+              Paropakar Ambulance Service-4260859<br><br>
+            </section>
+            <section>
+
+              <h4>Contact us:</h4>
+              <ul class="alt">
+                <li><a href="https://www.facebook.com/">
+                  Suraj Kumal<br> Samir Husen<br> Jayant Karmacharya<br>  Rikita Basukala</a></li>
+
+                <li><a href="">saw.mendes.meer@gmail.com</a></li>
+                <li><a href="">suraj.kumal@gmail.com</a></li>
+                <li><a href="">pakum.jayant@gmail.com</a></li>
+                <li><a href="">rikitabasukal.59@gmail.com</a></li>
+                <li><a href="#">041-526694  041-524478</a></li>
+                <li><a href="https://www.facebook.com/sawmirphotos/">Nature Photography's</a></li>
+              </ul>
+            </section>
+
+
+            <section>
+              <h4>Find us on: </h4>
+              <ul class="plain">
+                <li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                <li><a href="#"><i class="icon fa-pinterest">&nbsp;</i>Pinterest</a></li>
+                <li><a href="#"><i class="icon fa-tumblr">&nbsp;</i>Tumblr</a></li>
+                <li><a href="#"><i class="icon fa-apple">&nbsp;</i>Apple</a></li>
+                <li><a href="#"><i class="icon fa-windows">&nbsp;</i>Windows</a></li>
+              </ul>
+            </section>
+          </div>
+          <div class="copyright">
+            &copy;2019 Copyright.Samir Husen.All Right Reserved
+          </div>
+        </div>
+      </footer>
+
+</body>
+</html>
