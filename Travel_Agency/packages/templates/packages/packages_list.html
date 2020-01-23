@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="get" class="search-bar" >
+	<input type="text" name="q" placeholder="search.." value='{{query}}'>
+
+<table>
+
+<thead>
+
+	<tr>
+		<th>Title</th>
+		<th>Name</th>
+		<th>Delete</th>
+
+	</tr>
+</thead>
+{% if packages %}
+<tbody>
+	{% for packages in packages %}
+	<tr>
+		<td>{{packages.title}}</td>
+		<td>{{packages.name}}</td>
+		<td> 
+			<form method="POST" action="{% url 'packages:delete_packages' packages.pk %}">
+				{% csrf_token %}
+				<button class="btn btn-primary btn-sm">Delete</button>
+			</form>
+		</td>
+
+
+
+
+	</tr>
+	{% endfor %}
+
+{% else %}
+	<div class="container">
+		<div class="row">
+			<div class="card-body">
+
+				<h1 class="card-title">No Results!</h1>
+
+			</div>
+		</div>
+	</div>
+				
+</tbody>
+
+{% endif %}
+
+
+</table>
+
+
+
+
+{% endblock %}
