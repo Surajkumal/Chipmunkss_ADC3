@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'User.apps.UserConfig',
-    
+    'CABS.apps.CabsConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
