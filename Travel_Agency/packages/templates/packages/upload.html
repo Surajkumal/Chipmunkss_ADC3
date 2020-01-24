@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+
+	{% csrf_token %}
+
+	{{form}}
+
+	<button class="btn btn-oorimary btn-sm" type="Upload">Upload</button>
+
+</form>
+
+{% endblock %}

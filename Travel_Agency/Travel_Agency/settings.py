@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'User.apps.UserConfig',
-    
+    'packages',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'Travel_Agency.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
