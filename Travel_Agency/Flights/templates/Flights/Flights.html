@@ -1,0 +1,16 @@
+{% extends "User/base.html" %}
+{% load crispy_forms_tags %}
+{% block content%}
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    <table border="1">
+        <legend class="border-bottom mb-4"> Book Your Flights Here: </legend>
+      {{ form|crispy }}
+    </table>
+    <button class="btn btn-outline-info" type="submit">
+        Confirm Your Flight
+    </button>
+  </form>
+
+{% endblock %}
