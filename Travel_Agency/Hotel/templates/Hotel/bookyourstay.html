@@ -1,34 +1,79 @@
 {% extends "User/base.html" %}
 {% load crispy_forms_tags %}
-
+{% load static %}
 
 {% block content%}
-<style>
-.hotel
-{
-background-image:url('{{ STATIC_URL }}images/background.JPG');
-background-repeat:no-repeat;
-background-size:100%;
-}
-</style>
-<body class="hotel">
-	<div class="content-section">
-		<form method="POST">
-			{% csrf_token %}
-			<fieldset class="form-group">
-				<legend class="border-bottom mb-4"> Book Your Stay</legend>
-				{{ form|crispy }}
-				</fieldset>
-				<div class="form-group">
-					<button class="btn btn-outline-info" type="submit">
-						Search Availability
-					</button>
+<!--link href="https://fonts.googleapis.com/css?family=Cantata+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet"-->
+
+
+<link type="text/css" rel="stylesheet" href="{% static '/Hotel/css/bootstrap.min.css' %}" />
+
+<link rel="stylesheet" href="{% static '/Hotel/style.css' %}">
+
+<form method="post" class="hotel__form" action="/rooms_form/"> 
+	{% csrf_token %}
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-cta">
+						<h1>Make Your Reservation</h1>
+					</div>
+					<div class="booking-form">
+						<form>
+							<div class="col-md-8" name="Destination" >
+								<div class="form-group">
+									<span class="form-label">Destination</span>
+									<input class="form-control" type="text" placeholder="Enter Address, zip, city or airport">
+								</div>
+							</div>
+							<div class="col-md-2" name="Guest" >
+								<div class="form-group">
+									<span class="form-label">Guests</span>
+									<select class="form-control">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+									</select>
+									<span class="select-arrow"></span>
+								</div>
+							</div>
+							<div class="col-md-2" name="Children" >
+								<div class="form-group">
+									<span class="form-label">Children</span>
+									<select class="form-control">
+										<option>0</option>
+										<option>1</option>
+										<option>2</option>
+									</select>
+									<span class="select-arrow"></span>
+								</div>
+							</div>
+							<div class="col-md-4" name="Check_in">
+								<div class="form-group">
+									<span class="form-label">Check In</span>
+									<input class="form-control" type="date" required>
+								</div>
+							</div>
+							<div class="col-md-4" name="check_out">
+								<div class="form-group">
+									<span class="form-label">Check out</span>
+									<input class="form-control" type="date" required>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-btn">
+									<button class="submit-btn">Check availability</button>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
-					</form>
-		<div class="border-top pt-3">
-		
-			
+			</div>
 		</div>
 	</div>
+</div>
+</form>
 </body>
 	{% endblock %}
