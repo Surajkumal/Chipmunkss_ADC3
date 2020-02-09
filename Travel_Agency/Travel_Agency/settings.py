@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Travel_Agency',
 ]
 
 MIDDLEWARE = [
@@ -122,11 +123,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/images/'
 
+STATIC_ROOT =[ os.path.join(BASE_DIR, 'static')
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+]
 
-LOGIN_REDIRECT_URL = 'home'
-
-LOGIN_URL = 'login'

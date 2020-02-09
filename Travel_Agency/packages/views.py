@@ -11,6 +11,22 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 
 # Create your views here.
+def List_packages(request):
+	packages = Packages.objects.all()
+	return render{request, 'packages_list.html',{'packages': packages}}
+
+
+def create_package(request):
+	form = OurForm(request.POST or None)
+
+	if form.is_valid():
+		form.save()
+		return redirect('List_packages')
+
+	return render{request, ''}	
+
+
+
 def upload_packages(request):
 	form = OurForm()
 	if request.method =="POST":
@@ -27,7 +43,7 @@ def packages_list(request):
 	if request.GET:
 		query = request.GET['q']
 		packages = get_data_queryset(str(query))
-	return render(request, "main/pacckages_list.html", {"packages: packages})
+	return render(request, "main/packages_list.html", {"packages: packages"})
 
 
 def delete_packages(request, pk):
