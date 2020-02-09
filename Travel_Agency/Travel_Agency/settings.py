@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'User.apps.UserConfig',
     'packages',
+    'User.apps.UserConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Travel_Agency',
+    
 ]
 
 MIDDLEWARE = [
@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
 
-STATIC_ROOT =[ os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT =[ os.path.join(BASE_DIR, 'media')
 
 ]
 

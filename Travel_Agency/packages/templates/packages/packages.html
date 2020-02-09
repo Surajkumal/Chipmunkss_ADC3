@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale-2.0, maximum-scale=2.0, minimum-scale=2.0">
+
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		{% for package in packages %}
+			<a href="{%url 'update_package' package.id %}">
+			<li> {{ packages.description}}</li>
+			</a>
+
+		{% endfor %}
+
+	</ul>
+	
+	<a href="{% url 'create_packages' %}">New Package</a>
+
+</body>
+</html>					
