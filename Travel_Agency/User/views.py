@@ -4,20 +4,20 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from User.forms import UserRegistrationForm
+from django.db.models import Q
 
-#from . models import Post
 
 def home(request):
-	return render(request,'User/home.html')
+	return render(request,'User/home.html')#returns the home page
 
 def register(request):
 	if request.method =='POST':
-		form = UserRegistrationForm(request.POST)
+		form = UserRegistrationForm(request.POST)#posts user info
 		if form.is_valid():
-			user = form.save()
+			user = form.save()#saves user 
 			#username = form.cleaned_data.get('username')
 			login(request,user)
-			messages.success(request, f'Account created for {{username}}!')
+			messages.success(request, f'Account created for {{user}}!')#alter message shown
 			return redirect('home')
 	else:
 		form = UserRegistrationForm()
@@ -45,4 +45,5 @@ def user_login(request):
 	return render(request, 'User/login.html',
 		{"form":form})
 
-# Create your views here.
+def profile(request):
+	return render(request,'User/profile.html')
