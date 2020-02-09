@@ -21,3 +21,6 @@ urlpatterns = [
     path('', include('User.urls')),
     path('', include('CABS.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL,
+    document_root =settings.MEDIA_ROOT)

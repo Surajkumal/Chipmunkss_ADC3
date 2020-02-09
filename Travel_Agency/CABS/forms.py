@@ -7,3 +7,8 @@ class Usercabsbookform(forms.ModelForm):
 
 		model = CAB
 		fields = ['Pickup','Drop']
+
+class OurForm(forms.ModelForm):
+	class Meta:
+		model = CAB
+		fields = ('pickup', 'drop', 'File')
