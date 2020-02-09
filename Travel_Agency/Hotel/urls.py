@@ -5,11 +5,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    
+    #to locate the page when correspounding path is searched
     path('hotel/',views.hotel, name='hotel' ),
     path('rooms_from/',views.rooms_from, name='rooms_from' ),
-    path('payment/',views.rooms_from, name='payment' ),
-
-
+    path('payment/',views.payment, name='payment' ),
     
     ]
