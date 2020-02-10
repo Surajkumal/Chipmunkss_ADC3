@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<P>
+
+<a href="{% url 'cabs:files' %}" class="btn btn-primary btn-sm">Upload</a>
+
+</P>
+{% if cabbings %}	
+
+	{% for cabbing in cabbings %}
+	
+        <b>Pickup:</b>{{cabbing.Pickup}}
+        <br>
+        <b>Drop:</b>{{cabbing.Drop}}
+        <br>
+        <img src={{cabbing.File.url}} height="30%" width="30%">
+        <br>
+        <a href="{{cabbing.File.url}}" download>Download </a>
+    
+		
+		<form method="POST" action="{% url 'cabs:delete' cabbing.pk %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+        <form method="POST" class="update-form"action="{% url 'cabs:update' cabbing.pk %}">
+            {% csrf_token %}
+               <button type="submit" class="btn btn-primary">Update</button>
+               <hr>
+         </form>
+         <br>
+	{% endfor %}
+       
+</tbody>
+
+</table>
+
+{% else %}
+
+<div class="container">
+<div class="row">
+<div class="card-title">
+<div class="card-body"> No results ! </h1>
+
+</div>
+
+{% endif %}
+{% endblock %}
+
+
+
