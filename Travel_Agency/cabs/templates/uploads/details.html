@@ -2,11 +2,7 @@
 
 {% block content %}
 
-<form method="get" class="search-bar">
 
-<input type="text" class="form-control" name="q" placeholder="Search.." id="id_q">
-
-</form>
 
 <P>
 
@@ -21,7 +17,7 @@
 		<th>Pickup</th>
 		<th>Drop</th>
 		<th>Download</th>
-		<th>Delete</th> 
+		 
 	</tr>
 
 </thead>
@@ -30,13 +26,14 @@
 	{% for cabbing in cabbings %}
 	<tr>
 		<td>{{cabbing.Pickup}}</td>
-		<td>{{book.name}}</td>
-		<td><a href="{{book.pdf.url}}">Download PDF</a></td>
-		<td><form method="POST" action="{% url 'personal:delete' book.pk %}">
-				{% csrf_token %}
+		<td>{{cabbing.Drop}}</td>
+		<td><a href="{{cabbing.File.url}}" download>Download </a></td>
+		
+		<td><form method="POST" action="{% url 'cabs:delete' cabbing.pk %}">
+            {% csrf_token %}
 
-		<button type="submit" class="btn btn-primary">Delete</button>
-		</form></td>
+        <button type="submit" class="btn btn-primary">Delete</button>
+        </form></td>
 	</tr>
 	{% endfor %}
 

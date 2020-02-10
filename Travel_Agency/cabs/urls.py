@@ -10,4 +10,5 @@ app_name = "cabs"
 urlpatterns = [
     path('cab/upload/', views.upload, name="files"),
     path('cab/', views.display, name="display"),
+    path('cab/<int:pk>/', views.delete, name="delete"),
 ]

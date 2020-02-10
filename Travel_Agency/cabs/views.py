@@ -17,3 +17,8 @@ def upload(request):
 def display(request):
     cabbing=Cabbing.objects.all()
     return render(request, "uploads/details.html", {"cabbings":cabbing})
+
+def delete(request, pk = None):
+	cabbing = Cabbing.objects.get(pk=pk)
+	cabbing.delete()
+	return redirect('cabs:display')
