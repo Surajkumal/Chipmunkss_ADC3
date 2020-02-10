@@ -9,6 +9,8 @@ urlpatterns = [
     path('', include('User.urls')),
     path('', include('Hotel.urls')),
     #path(r'^search/',include('Hotel.urls',namespace='search')),
+    path('', include('Flights.urls')),
+    
 ]
 
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'User.apps.UserConfig',
     'packages',
     'Hotel.apps.HotelConfig',
+    'Flights.apps.FlightsConfig',
+    
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -124,7 +127,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
