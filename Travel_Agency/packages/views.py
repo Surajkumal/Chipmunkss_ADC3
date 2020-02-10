@@ -10,6 +10,9 @@ from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 
+from django.conf import settings
+
+
 # Create your views here.
 def List_packages(request):
 	packages = Packages.objects.all()
@@ -23,7 +26,7 @@ def create_package(request):
 		form.save()
 		return redirect('List_packages')
 
-	return render{request, ''}	
+	return render{request, {'form':form}}	
 
 
 
@@ -50,6 +53,7 @@ def delete_packages(request, pk):
 	packages = Packages.objects.get(pk=pk)
 	packages.delete()
 	return redirect('packages:Packages')
+
 
 
 def get_data_queryset(query=None):
