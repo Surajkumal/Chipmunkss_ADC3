@@ -13,8 +13,8 @@ class Flights(models.Model):
     Adults=models.PositiveIntegerField(default=0)
     Childrens=models.PositiveIntegerField(default=0)
 
-    def __str__(self):
-       return self.Departure_Date
+    #def __str__(self):
+      # return self.Departure_Date
 
 
 # Create / Insert / Add - POST
