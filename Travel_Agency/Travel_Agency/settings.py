@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'packages',
+    'rest_framework',
     'User.apps.UserConfig',
     'crispy_forms',
     'django.contrib.admin',
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
     
 ]
 
