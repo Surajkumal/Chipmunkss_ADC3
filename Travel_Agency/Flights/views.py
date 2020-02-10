@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 #from rest_framework.views import APIView
 #from rest_framework.response import Response
 #from rest_framework import status
-from . models import Flights
+#from .models import Flights
 #from Flights.serializers import FlightsSerializers
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
