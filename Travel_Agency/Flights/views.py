@@ -21,14 +21,6 @@ from django.core.paginator import Paginator
 
 @login_required
 def home(request):
-    posts = Post.objects.all()
-    Paginator = Paginator(posts, 3)
-    page = request.GET.get('page')
-    # pagination
-    # ?page=2
-
-    posts = Paginator.get_page(page)
-
     return render(request, 'Flights/Flights.html')
 
 
