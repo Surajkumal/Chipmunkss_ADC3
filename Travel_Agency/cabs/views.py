@@ -32,3 +32,4 @@ def update(request, id=None):
 			form.save()
 			return redirect('cabs:display')
 	return render(request, "uploads/uploads.html", {"form": form})
+
