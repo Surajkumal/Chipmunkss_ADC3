@@ -10,33 +10,30 @@
 
 </P>
 {% if cabbings %}	
-<table class="table">
 
-<thead>
-	<tr>
-		<th>Pickup</th>
-		<th>Drop</th>
-		<th>Download</th>
-		 
-	</tr>
-
-</thead>
-
-<tbody>
 	{% for cabbing in cabbings %}
-	<tr>
-		<td>{{cabbing.Pickup}}</td>
-		<td>{{cabbing.Drop}}</td>
-		<td><a href="{{cabbing.File.url}}" download>Download </a></td>
+	
+        <b>Pickup:</b>{{cabbing.Pickup}}
+        <br>
+        <b>Drop:</b>{{cabbing.Drop}}
+        <br>
+        <img src={{cabbing.File.url}} height="30%" width="30%">
+        <br>
+        <a href="{{cabbing.File.url}}" download>Download </a>
+    
 		
-		<td><form method="POST" action="{% url 'cabs:delete' cabbing.pk %}">
-            {% csrf_token %}
-
+		<form method="POST" action="{% url 'cabs:delete' cabbing.pk %}">
+        {% csrf_token %}
         <button type="submit" class="btn btn-primary">Delete</button>
-        </form></td>
-	</tr>
+        </form>
+        <form method="POST" class="update-form"action="{% url 'cabs:update' cabbing.pk %}">
+            {% csrf_token %}
+               <button type="submit" class="btn btn-primary">Update</button>
+               <hr>
+         </form>
+         <br>
 	{% endfor %}
-
+       
 </tbody>
 
 </table>
