@@ -10,14 +10,32 @@ from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 
-# Create your views here.
+from django.conf import settings
+
+
+def List_packages(request):
+	packages = Packages.objects.all()
+	return render{request, 'packages.html', {'packages': packages}}
+
+
+def create_package(request):
+	form = OurForm(request.POST or None)
+
+	if form.is_valid():
+		form.save()
+		return redirect('List_packages')
+
+	return render{request, {'form':form}}	
+
+
+
 def upload_packages(request):
 	form = OurForm()
 	if request.method =="POST":
 		form = OurForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			return redirect('packages:Packages')
+			return redirect('packages:packages')
 
 
 	return render(request, "main/upload.html", {"form": form})
@@ -27,13 +45,14 @@ def packages_list(request):
 	if request.GET:
 		query = request.GET['q']
 		packages = get_data_queryset(str(query))
-	return render(request, "main/pacckages_list.html", {"packages: packages})
+	return render(request, "main/packages_list.html", {"packages: packages"})
 
 
 def delete_packages(request, pk):
 	packages = Packages.objects.get(pk=pk)
 	packages.delete()
 	return redirect('packages:Packages')
+
 
 
 def get_data_queryset(query=None):
