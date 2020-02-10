@@ -1,0 +1,28 @@
+
+{% block content %}
+
+<form method="get" class="search-bar">
+
+<input type="text" class="form-control" name="q" placeholder="Search.." id="id_q">
+
+</form>
+
+{% if cabbings %}	
+
+
+	{% for cabbing in cabbings %}
+	
+        {{cabbing.Pickup}}
+        <br>
+        {{cabbing.Drop}}
+        <br>
+        <img src="{{cabbing.File.url}}>
+    
+		
+
+	{% endfor %}
+{% else %}
+{% endif %}
+
+
+{% endblock %}
