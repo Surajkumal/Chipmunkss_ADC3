@@ -1,4 +1,4 @@
-`from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from .forms import OurForm
@@ -13,10 +13,9 @@ import json
 from django.conf import settings
 
 
-# Create your views here.
 def List_packages(request):
 	packages = Packages.objects.all()
-	return render{request, 'packages.html',{'packages': packages}}
+	return render{request, 'packages.html', {'packages': packages}}
 
 
 def create_package(request):
