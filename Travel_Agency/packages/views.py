@@ -35,7 +35,7 @@ def upload_packages(request):
 		form = OurForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			return redirect('packages:Packages')
+			return redirect('packages:packages')
 
 
 	return render(request, "main/upload.html", {"form": form})
