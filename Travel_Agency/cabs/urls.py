@@ -8,7 +8,8 @@ from . import views
 app_name = "cabs"
 
 urlpatterns = [
-
+    
+    #path('/cabs/',views.home, name='Cabs'),
     path('cab/upload/', views.upload, name='files'),
     path('cab/', views.display, name='display'),
     path('cab/delete/<int:pk>/', views.delete, name='delete'),
